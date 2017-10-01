@@ -2,7 +2,7 @@
 #include<conio.h>
 int main()
 {
-	int size,i,j,a[10];
+	int size,i,j,a[10],loc;
 	printf("enter the elements of array");
 	scanf("%d",&size);
 	printf("enter the elements of array");
@@ -13,18 +13,18 @@ int main()
 for(i=0;i<size;i++)
 {
 	int min_element=a[i];
+	loc=i;
 	for(j=i;j<size;j++)
 	{
 		if(min_element>a[j])
 		{
-			int temp=a[j-1];
-			a[j-1]=a[j];
-			a[j]=temp;
-			
-			
-			
+			min_element=a[j];
+			loc=j;
 		}
 	}
+	int temp=a[i];
+	a[i]=a[loc];
+	a[loc]=temp;
 }
 for(i=0;i<size;i++)
 {
